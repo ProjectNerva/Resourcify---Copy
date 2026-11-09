@@ -1,0 +1,7 @@
+# Resourcify
+User-agent: *
+Allow: /
+
+# API and offline fallback are not search pages.
+Disallow: /api/
+Disallow: /offline.html

@@ -1,0 +1,74 @@
+{
+  "name": "resourcify",
+  "version": "1.0.0",
+  "description": "AI-powered resource analysis and emergency preparedness tool",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "nodemon server/index.js",
+    "dev:client": "vite",
+    "build": "node scripts/build/build.mjs",
+    "preview": "vite preview",
+    "test": "vitest run --config tests/config/vitest.config.mjs",
+    "test:coverage": "vitest run --coverage --config tests/config/vitest.config.mjs",
+    "test:e2e": "npm run build && node scripts/checks/test-browser.mjs",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "npm run format:check && npm run test:coverage && npm run test:e2e",
+    "smoke": "node scripts/checks/smoke.mjs",
+    "verify:211": "node scripts/guide/verify-211.mjs",
+    "eval:guide": "node scripts/guide/guide-eval.mjs --live"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.14.1",
+    "@meshtastic/protobufs": "^2.8.0",
+    "dotenv": "^17.2.3",
+    "express": "^4.22.2",
+    "express-rate-limit": "^7.1.5",
+    "multer": "^2.3.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@testing-library/user-event": "^14.6.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "@vitest/coverage-v8": "^5.0.0",
+    "concurrently": "^9.2.1",
+    "fake-indexeddb": "^6.2.5",
+    "jsdom": "^30.0.1",
+    "nodemon": "^3.1.10",
+    "oxc-transform-react": "^0.145.0",
+    "prettier": "^3.9.8",
+    "supertest": "^7.2.2",
+    "vite": "^8.2.2",
+    "vitest": "^5.0.0",
+    "yaml": "^2.9.0"
+  },
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dhruvbantval/Resourcify.git"
+  },
+  "keywords": [
+    "ai",
+    "resource-management",
+    "emergency-preparedness",
+    "mesh-network",
+    "offline-first"
+  ],
+  "author": "dhruvbantval",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dhruvbantval/Resourcify/issues"
+  },
+  "homepage": "https://github.com/dhruvbantval/Resourcify#readme",
+  "overrides": {
+    "qs": "^6.16.0"
+  }
+}

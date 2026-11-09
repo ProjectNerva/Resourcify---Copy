@@ -1,0 +1,487 @@
+:root {
+  font-family: "Segoe UI", Arial, sans-serif;
+  color: #eceff3;
+  background: #1a1d21;
+  font-synthesis: none;
+  color-scheme: dark;
+  line-height: 1.6;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  border: 1px solid #62758b;
+  background: #263342;
+  color: #f4f7fc;
+  padding: 0.65rem 1rem;
+  margin: 0.35rem 0.5rem 0.35rem 0;
+  border-radius: 4px;
+}
+button:hover,
+button[aria-current="page"] {
+  background: #354c64;
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+a {
+  color: #a3cafa;
+}
+a:hover {
+  text-decoration-thickness: 2px;
+}
+:focus-visible {
+  outline: 3px solid #eec96d;
+  outline-offset: 3px;
+}
+.app-shell {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+header {
+  border-bottom: 1px solid #47515e;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+header .brand {
+  border: 0;
+  font-size: 1.5rem;
+  background: transparent;
+  padding: 0;
+}
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+nav button {
+  font-size: 0.9rem;
+  padding: 0.45rem 0.65rem;
+  margin: 0;
+}
+main {
+  min-height: 65vh;
+  padding: 2.5rem 0;
+  max-width: 900px;
+  margin: auto;
+}
+h1 {
+  font-size: clamp(1.9rem, 4vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 1rem;
+}
+h2 {
+  font-size: 1.35rem;
+  font-weight: 600;
+  margin: 0 0 1rem;
+}
+h3 {
+  font-size: 1.1rem;
+}
+p {
+  color: #c7cfd9;
+}
+.lead {
+  font-size: 1.2rem;
+}
+.panel {
+  padding: 1.5rem;
+  border: 1px solid #47515e;
+  margin: 1.5rem 0;
+  background: #20262e;
+}
+label {
+  display: block;
+  margin: 0.8rem 0;
+}
+input:not([type="checkbox"]),
+textarea,
+select {
+  display: block;
+  width: 100%;
+  border: 1px solid #68788b;
+  background: #171d24;
+  color: #eff4fc;
+  padding: 0.6rem;
+  margin-top: 0.35rem;
+  border-radius: 2px;
+}
+input[type="file"] {
+  padding: 0.5rem;
+}
+input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+  margin: 0.25rem 0.6rem 0 0;
+  flex-shrink: 0;
+}
+.check {
+  display: flex;
+  align-items: flex-start;
+}
+.field-row {
+  display: flex;
+  gap: 1rem;
+}
+.field-row > * {
+  flex: 1;
+  min-width: 0;
+}
+fieldset {
+  border: 0;
+  padding: 0;
+}
+legend {
+  font-weight: 600;
+}
+.preview {
+  display: block;
+  max-width: 100%;
+  max-height: 240px;
+  margin: 1rem 0;
+  object-fit: contain;
+}
+/* One photo control: tap for camera or library, or drop an image on it */
+.photo-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 1.4rem 1rem;
+  border: 2px dashed #68788b;
+  border-radius: 12px;
+  background: #171d24;
+  text-align: center;
+  cursor: pointer;
+}
+.photo-picker:hover,
+.photo-picker:focus-within {
+  border-color: #9ec5ff;
+}
+.photo-picker .preview {
+  margin: 0 0 0.4rem;
+  border-radius: 8px;
+}
+.photo-picker-icon {
+  color: #9ec5ff;
+}
+.photo-picker-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.photo-picker-hint {
+  font-size: 0.9rem;
+  color: #b8c3d0;
+}
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0 !important;
+}
+/* Cash for Cans: one card per material the person added */
+.material {
+  border: 1px solid #47515e;
+  border-radius: 8px;
+  padding: 0.6rem 1rem 0.4rem;
+  margin: 0 0 0.8rem;
+}
+.material legend {
+  padding: 0 0.3rem;
+}
+.material label {
+  margin: 0.3rem 0;
+}
+.link-button {
+  background: none;
+  border: 0;
+  padding: 0.2rem 0;
+  color: #9ec5ff;
+  text-decoration: underline;
+  font-size: 0.9rem;
+}
+.example {
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.9rem;
+  color: #b8c3d0;
+}
+.totals {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.totals dd {
+  margin: 0;
+  font-size: 1.25rem;
+}
+.totals dt {
+  color: #b8c3d0;
+}
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 2rem 0;
+}
+.home-actions button {
+  text-align: left;
+  padding: 1.1rem 1.3rem;
+  font-size: 1.15rem;
+}
+.home-actions span {
+  display: block;
+  font-size: 0.9rem;
+  color: #c7cfd9;
+}
+.places {
+  padding-left: 1.25rem;
+}
+.places li {
+  border-bottom: 1px solid #47515e;
+  padding-bottom: 1rem;
+}
+.map {
+  height: 420px;
+  margin-top: 1rem;
+}
+.notice {
+  padding: 1rem;
+  border: 1px solid #827246;
+  background: #302d25;
+  margin: 1rem 0;
+}
+[role="alert"] {
+  color: #ffb4a8;
+}
+[hidden] {
+  display: none !important;
+}
+footer {
+  border-top: 1px solid #47515e;
+  padding: 1.5rem 0;
+  font-size: 0.9rem;
+}
+.skip-link {
+  position: absolute;
+  top: -100px;
+}
+.skip-link:focus {
+  top: 0;
+  background: #20262e;
+  padding: 1rem;
+  z-index: 100;
+}
+.messages {
+  max-height: 300px;
+  overflow: auto;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 600px) {
+  .app-shell {
+    padding: 0 1rem;
+  }
+  main {
+    padding: 2rem 0;
+  }
+  .panel {
+    padding: 1rem;
+  }
+  .field-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  nav {
+    width: 100%;
+  }
+  nav button {
+    flex-grow: 1;
+  }
+  .map {
+    height: 300px;
+  }
+}
+
+/* Guide */
+.guide-suggestions {
+  margin: 1rem 0;
+}
+.guide-suggestions button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  margin: 0.4rem 0;
+}
+.guide-thread {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.guide-thread > li {
+  margin-bottom: 1.5rem;
+}
+.guide-question {
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+.guide-answer {
+  border-left: 3px solid #47515e;
+  padding-left: 1rem;
+}
+/* A crisis reply must not look like an ordinary answer. */
+.guide-answer.crisis {
+  border-left-color: #f0a63a;
+}
+.guide-source a {
+  display: block;
+}
+.guide-notice {
+  font-size: 0.9rem;
+  color: #b7c0cc;
+}
+
+/* Processing notice */
+.processing-notice-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 100;
+}
+.processing-notice {
+  background: #20262e;
+  border: 1px solid #47515e;
+  padding: 1.5rem;
+  max-width: 28rem;
+  width: 100%;
+}
+.processing-notice h2 {
+  margin-top: 0;
+}
+.processing-notice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.processing-notice-actions button {
+  flex: 1 1 auto;
+}
+
+/* Phones: one scrollable row of tools instead of a two-row wall of buttons */
+nav {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 0.2rem;
+}
+nav::-webkit-scrollbar {
+  display: none;
+}
+nav button {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+/* Settings menu: top right, beside the brand */
+.settings {
+  position: relative;
+  margin-left: auto;
+  flex: 0 0 auto;
+}
+.settings > summary {
+  list-style: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid #47515e;
+  border-radius: 8px;
+  background: #263342;
+  font-size: 0.95rem;
+}
+.settings > summary::-webkit-details-marker {
+  display: none;
+}
+.settings[open] > summary {
+  border-color: #9ec5ff;
+}
+.settings-panel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.4rem);
+  z-index: 20;
+  width: min(20rem, calc(100vw - 2rem));
+  padding: 1rem;
+  border: 1px solid #47515e;
+  border-radius: 10px;
+  background: #20262e;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 45%);
+}
+.settings-panel select {
+  width: 100%;
+  margin-top: 0.3rem;
+}
+.settings-hint {
+  margin: 0.2rem 0 0;
+  font-size: 0.85rem;
+  color: #b8c2cf;
+}
+.route {
+  margin: 0.4rem 0 0;
+  font-weight: 600;
+}
+
+/* Rationer plan */
+.plan-lines {
+  list-style: none;
+  padding: 0;
+}
+.plan-lines li {
+  display: flex;
+  flex-direction: column;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #47515e;
+}
+.plan-lines span,
+.store-kind span {
+  color: #b8c3d0;
+  font-size: 0.95rem;
+}
+.store-kind ul {
+  list-style: none;
+  padding: 0;
+}
+.store-kind li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  margin: 0 0 0.8rem;
+}
+.location-weather {
+  margin-top: 0.8rem;
+}

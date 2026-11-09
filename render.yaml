@@ -1,0 +1,34 @@
+# One Render web service serves both built React and Express at the same origin.
+# No database, persistent disk, Vercel, Heroku proxy or Firebase is required.
+services:
+  - type: web
+    name: resourcify
+    runtime: node
+    region: oregon
+    buildCommand: npm ci --include=dev && npm test && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    autoDeployTrigger: off
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "24"
+      - key: TRUST_PROXY
+        value: "1"
+      - key: ENABLE_EXTERNAL_SERVICES
+        # Enable after live provider checks and institutional review.
+        value: "false"
+      - key: GEMINI_API_KEY
+        sync: false
+      - key: GEMINI_MODEL
+        value: gemini-3.6-flash
+      - key: GEMINI_FALLBACK_MODEL
+        # Used once when the primary model is over quota or under load.
+        value: gemini-flash-latest
+      - key: PLACES_API_KEY
+        sync: false
+      - key: MAPS_BROWSER_API_KEY
+        sync: false
+      - key: ROUTES_API_KEY
+        sync: false

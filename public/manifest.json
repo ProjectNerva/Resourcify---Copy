@@ -1,0 +1,30 @@
+{
+  "id": "/",
+  "name": "Resourcify",
+  "short_name": "Resourcify",
+  "description": "Resource planning and local support, without saved participant history.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#1a1d21",
+  "theme_color": "#263342",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icons/resourcify-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/resourcify-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    { "name": "Analyze resources", "url": "/?action=analyze" },
+    { "name": "Budget planner", "url": "/?action=budget" }
+  ]
+}
